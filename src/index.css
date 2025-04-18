@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -53,6 +54,13 @@
     
     --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 100%;
+
+    /* Adding danger color */
+    --cyber-danger: 0 100% 45%;
+    --cyber-warning: 35 100% 50%;
+    --cyber-accent: 199 100% 49%;
+    --cyber-primary: 0 100% 45%;
+    --cyber-dark: 0 0% 10%;
   }
 
   .dark {
@@ -92,6 +100,13 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dark mode cyber theme colors */
+    --cyber-danger: 0 100% 55%;
+    --cyber-warning: 35 100% 55%;
+    --cyber-accent: 199 100% 60%;
+    --cyber-primary: 0 100% 55%;
+    --cyber-dark: 0 0% 5%;
   }
 }
 

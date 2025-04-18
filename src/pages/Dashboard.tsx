@@ -75,20 +75,14 @@ export default function Dashboard() {
             </p>
           </div>
           <div className="aspect-w-16 aspect-h-9 max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl">
-            {/* Placeholder for video - would be replaced with actual video embed */}
-            <div className="w-full h-[500px] bg-gray-800 flex items-center justify-center">
-              <div className="text-center">
-                <div className="mx-auto w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mb-4">
-                  <div className="w-16 h-16 rounded-full bg-cyber-accent flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-white">Cybersecurity Fundamentals: Protecting Your Digital Life</h3>
-                <p className="mt-2 text-gray-400">Click to play video</p>
-              </div>
-            </div>
+            {/* Replacing placeholder with actual YouTube embed */}
+            <iframe 
+              className="w-full h-[500px]"
+              src="https://www.youtube.com/embed/inWWhr5tnEA" 
+              title="Cybersecurity Fundamentals: Protecting Your Digital Life"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen>
+            </iframe>
           </div>
         </div>
       </section>
@@ -167,10 +161,12 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Article 1 */}
             <Card>
-              <div className="h-48 bg-gray-200 dark:bg-gray-800 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <FileLock2 size={48} className="text-gray-400" />
-                </div>
+              <div className="h-48 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=650&q=80" 
+                  alt="Supply Chain Attack Concept" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="line-clamp-2">The Rising Threat of Supply Chain Attacks</CardTitle>
@@ -190,10 +186,12 @@ export default function Dashboard() {
             
             {/* Article 2 */}
             <Card>
-              <div className="h-48 bg-gray-200 dark:bg-gray-800 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <FileLock2 size={48} className="text-gray-400" />
-                </div>
+              <div className="h-48 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1510511233900-1982d92bd835?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=650&q=80" 
+                  alt="Multi-Factor Authentication" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="line-clamp-2">Multi-Factor Authentication: Beyond Passwords</CardTitle>
@@ -213,10 +211,12 @@ export default function Dashboard() {
             
             {/* Article 3 */}
             <Card>
-              <div className="h-48 bg-gray-200 dark:bg-gray-800 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <FileLock2 size={48} className="text-gray-400" />
-                </div>
+              <div className="h-48 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=650&q=80" 
+                  alt="Zero Trust Architecture" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="line-clamp-2">Zero Trust Architecture: Implementing Modern Security</CardTitle>
