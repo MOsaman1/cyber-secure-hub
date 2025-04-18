@@ -86,8 +86,8 @@ export default function Footer() {
             <div className="space-y-3">
               <p className="flex items-center text-sm">
                 <Mail className="h-4 w-4 mr-2 text-red-600" />
-                <a href="mailto:tadesse_m@soshgic.edu.gh" className="text-gray-300 hover:text-white">
-                  tadesse_m@soshgic.edu.gh
+                <a href="mailto:mosachanyalew7@gmail.com" className="text-gray-300 hover:text-white">
+                  mosachanyalew7@gmail.com
                 </a>
               </p>
               <p className="flex items-center text-sm">
@@ -105,10 +105,11 @@ export default function Footer() {
         {/* Contact Form */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <h3 className="text-lg font-medium text-white mb-4">Send us a message</h3>
-          <form className="grid grid-cols-1 md:grid-cols-3 gap-4" action="mailto:tadesse_m@soshgic.edu.gh" method="post" encType="text/plain">
+          <form className="grid grid-cols-1 md:grid-cols-3 gap-4" action="mailto:mosachanyalew7@gmail.com" method="post" encType="text/plain">
             <div>
               <input 
                 type="text" 
+                name="name"
                 placeholder="Your Name" 
                 className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
               />
@@ -116,6 +117,7 @@ export default function Footer() {
             <div>
               <input 
                 type="email" 
+                name="email"
                 placeholder="Your Email" 
                 className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
               />
@@ -123,6 +125,7 @@ export default function Footer() {
             <div className="md:col-span-3">
               <textarea 
                 placeholder="Your Message" 
+                name="message"
                 rows={3}
                 className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
               />
