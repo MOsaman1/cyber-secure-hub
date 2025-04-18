@@ -1,8 +1,34 @@
 
 import { Link } from "react-router-dom";
 import { Shield, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Github } from "lucide-react";
+import { useState } from "react";
 
 export default function Footer() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const { name, email, message } = formData;
+    const mailtoLink = `mailto:mosachanyalew7@gmail.com?subject=Contact Form Message&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`)}`;
+    
+    window.location.href = mailtoLink;
+    setFormSubmitted(true);
+    
+    // Reset form
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -105,38 +131,53 @@ export default function Footer() {
         {/* Contact Form */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <h3 className="text-lg font-medium text-white mb-4">Send us a message</h3>
-          <form className="grid grid-cols-1 md:grid-cols-3 gap-4" action="mailto:mosachanyalew7@gmail.com" method="post" encType="text/plain">
-            <div>
-              <input 
-                type="text" 
-                name="name"
-                placeholder="Your Name" 
-                className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
-              />
+          {formSubmitted ? (
+            <div className="p-4 bg-green-800 rounded-md">
+              <p className="text-white">Thank you for your message! We'll respond as soon as possible.</p>
             </div>
-            <div>
-              <input 
-                type="email" 
-                name="email"
-                placeholder="Your Email" 
-                className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
-              />
-            </div>
-            <div className="md:col-span-3">
-              <textarea 
-                placeholder="Your Message" 
-                name="message"
-                rows={3}
-                className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
-              />
-            </div>
-            <button 
-              type="submit" 
-              className="md:col-span-3 px-6 py-2 bg-red-600 text-white font-medium rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
-            >
-              Send Message
-            </button>
-          </form>
+          ) : (
+            <form className="grid grid-cols-1 md:grid-cols-3 gap-4" onSubmit={handleSubmit}>
+              <div>
+                <input 
+                  type="text" 
+                  name="name"
+                  placeholder="Your Name" 
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
+                  required
+                />
+              </div>
+              <div>
+                <input 
+                  type="email" 
+                  name="email"
+                  placeholder="Your Email" 
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
+                  required
+                />
+              </div>
+              <div className="md:col-span-3">
+                <textarea 
+                  placeholder="Your Message" 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={3}
+                  className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
+                  required
+                />
+              </div>
+              <button 
+                type="submit" 
+                className="md:col-span-3 px-6 py-2 bg-red-600 text-white font-medium rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
+              >
+                Send Message
+              </button>
+            </form>
+          )}
         </div>
 
         {/* Copyright */}
