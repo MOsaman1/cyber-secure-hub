@@ -1,35 +1,35 @@
 
 import { Link } from "react-router-dom";
-import { Shield, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import { Shield, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Github } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-cyber-primary text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <Shield className="h-8 w-8 text-cyber-accent" />
+              <Shield className="h-8 w-8 text-red-600" />
               <span className="ml-2 text-xl font-bold">CyberSecure Hub</span>
             </div>
             <p className="text-sm text-gray-300">
               Providing expert cybersecurity knowledge, training and resources to help secure your digital life.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-cyber-accent">
+              <a href="https://instagram.com/musetadd" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-red-600 transition-colors">
+                <span className="sr-only">Instagram</span>
+                <Instagram size={20} />
+              </a>
+              <a href="https://facebook.com/changmosa" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-red-600 transition-colors">
                 <span className="sr-only">Facebook</span>
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-cyber-accent">
+              <a href="https://twitter.com/chanyalewM29017" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-red-600 transition-colors">
                 <span className="sr-only">Twitter</span>
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-cyber-accent">
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-cyber-accent">
+              <a href="https://github.com/MOsaman1" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-red-600 transition-colors">
                 <span className="sr-only">GitHub</span>
                 <Github size={20} />
               </a>
@@ -82,10 +82,10 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-cyber-accent mb-4">Contact Us</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-red-600 mb-4">Contact Us</h3>
             <div className="space-y-3">
               <p className="flex items-center text-sm">
-                <Mail className="h-4 w-4 mr-2 text-cyber-accent" />
+                <Mail className="h-4 w-4 mr-2 text-red-600" />
                 <a href="mailto:tadesse_m@soshgic.edu.gh" className="text-gray-300 hover:text-white">
                   tadesse_m@soshgic.edu.gh
                 </a>
@@ -105,31 +105,31 @@ export default function Footer() {
         {/* Contact Form */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <h3 className="text-lg font-medium text-white mb-4">Send us a message</h3>
-          <form className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <form className="grid grid-cols-1 md:grid-cols-3 gap-4" action="mailto:tadesse_m@soshgic.edu.gh" method="post" encType="text/plain">
             <div>
               <input 
                 type="text" 
                 placeholder="Your Name" 
-                className="w-full px-4 py-2 rounded bg-cyber-secondary border border-cyber-dark/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyber-accent"
+                className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
               />
             </div>
             <div>
               <input 
                 type="email" 
                 placeholder="Your Email" 
-                className="w-full px-4 py-2 rounded bg-cyber-secondary border border-cyber-dark/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyber-accent"
+                className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
               />
             </div>
             <div className="md:col-span-3">
               <textarea 
                 placeholder="Your Message" 
                 rows={3}
-                className="w-full px-4 py-2 rounded bg-cyber-secondary border border-cyber-dark/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyber-accent"
+                className="w-full px-4 py-2 rounded bg-gray-900 border border-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
               />
             </div>
             <button 
-              type="button" 
-              className="md:col-span-3 px-6 py-2 bg-cyber-accent text-white font-medium rounded hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyber-accent"
+              type="submit" 
+              className="md:col-span-3 px-6 py-2 bg-red-600 text-white font-medium rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
             >
               Send Message
             </button>
