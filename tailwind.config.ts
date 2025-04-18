@@ -61,6 +61,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cyber: {
+					primary: '#0A2472',
+					secondary: '#1E3B70',
+					accent: '#00A6FB',
+					dark: '#001C55',
+					light: '#EDF2FB',
+					danger: '#FF304F',
+					warning: '#FFC857',
+					success: '#28C76F',
+					muted: '#6B7A99'
 				}
 			},
 			borderRadius: {
